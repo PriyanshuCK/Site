@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem !important;
+  background-color: transparent;
+  height: 0.5rem !important;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem !important;
+  @apply bg-primary-400;
+}
+.dark ::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem !important;
+  @apply bg-gray-600;
+}
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 0.5rem !important;
+  @apply bg-primary-300;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  border-radius: 0.5rem !important;
+  @apply bg-gray-500;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(187, 247, 208);
+  border-radius: 0.5rem !important;
+  @apply bg-primary-200;
+}
+.dark ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(51, 65, 85);
+  border-radius: 0.5rem !important;
+  @apply bg-gray-900;
+}
+@media only screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 0.25rem !important;
+    height: 0.25rem !important;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

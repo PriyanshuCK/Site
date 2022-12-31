@@ -1,0 +1,137 @@
+{
+  "name": "Priyanshu Sharma",
+  "short_name": "Priyanshu Sharma",
+  "icons": [
+    {
+      "src": "/static/favicons/icon-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/static/favicons/maskable_icon_x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/static/favicons/maskable_icon_x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/static/favicons/icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-500x500.png",
+      "type": "image/png",
+      "sizes": "500x500",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/favicons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Articles",
+      "short_name": "Articles",
+      "description": "Articles delineating some facts, ideas, or thoughts.",
+      "url": "/articles",
+      "icons": [{ "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "A detailed account of my happenings, activities, beliefs, and thoughts.",
+      "url": "/blog",
+      "icons": [{ "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Book Notes",
+      "short_name": "Notes",
+      "description": "Personally crafted notes of the non-fiction books I've read.",
+      "url": "/notes",
+      "icons": [{ "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Journal",
+      "short_name": "Journal",
+      "description": "An informal catalog of what I learn, do & observe each day.",
+      "url": "/journal",
+      "icons": [{ "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Thursday Thoughts",
+      "short_name": "Newsletter",
+      "description": "Subscribe to my weekly newsletter: Thursday Thoughts",
+      "url": "/newsletter",
+      "icons": [{ "src": "/static/favicons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    { "src": "/static/favicons/ss-tt.png", "sizes": "586x1041", "type": "image/png" },
+    { "src": "/static/favicons/ss-e.png", "sizes": "586x1041", "type": "image/png" },
+    { "src": "/static/favicons/ss-l.png", "sizes": "586x1041", "type": "image/png" }
+  ],
+  "description": "Hi, I'm Priyanshu Sharma. I love designing & reading. Join me in my journey of learning new things and sharing experiences."
+}
