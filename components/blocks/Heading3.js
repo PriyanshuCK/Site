@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import Renderblock from '../Renderblock'
 import Richtext from '../Richtext'
-export default function Heading3({ rich_text, color, toggle, children, id }) {
+export default function Heading3({ rich_text, color, toggle, childrenBlock, id }) {
   return (
     <>
       {toggle ? (
@@ -10,7 +10,7 @@ export default function Heading3({ rich_text, color, toggle, children, id }) {
             <summary className="mb-1 text-xl font-semibold text-gray-900 dark:text-gray-100">
               <Richtext text={rich_text} color={color} id={id} />
             </summary>
-            {children?.map((block) => (
+            {childrenBlock?.map((block) => (
               <Fragment key={block.id}>
                 <Renderblock block={block} />
               </Fragment>

@@ -17,7 +17,7 @@ export default function Tags({ tags }) {
           <ul>
             {tags.map((tag) => {
               return (
-                <li className="mt-2 mb-2">
+                <li className="mt-2 mb-2" key={tag}>
                   <Link
                     href={`/tag/${tag}`}
                     className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300"

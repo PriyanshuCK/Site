@@ -81,7 +81,7 @@ const Pre = (props) => {
         )}
 
         <pre>
-          <code className="language-cpp">{props.children}</code>
+          <code className="language-cpp">{props.codeText}</code>
         </pre>
       </div>
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Pre from '../components/Pre'
 import Paragraph from './blocks/Paragraph'
 import Heading1 from './blocks/Heading1'
@@ -9,7 +10,7 @@ import ListItem from './blocks/ListItem'
 import Todo from './blocks/Todo'
 import Toggle from './blocks/Toggle'
 import Code from './blocks/Code'
-import Image from './blocks/Image'
+import ImageBlock from './blocks/Image'
 import Divider from './blocks/Divider'
 
 export default function Renderblock(props) {
@@ -24,7 +25,7 @@ export default function Renderblock(props) {
           rich_text={value.rich_text}
           color={value.color}
           id={id}
-          children={value.children}
+          childrenBlock={value.children}
           toggle={value.is_toggleable}
         />
       )
@@ -34,7 +35,7 @@ export default function Renderblock(props) {
           rich_text={value.rich_text}
           color={value.color}
           id={id}
-          children={value.children}
+          childrenBlock={value.children}
           toggle={value.is_toggleable}
         />
       )
@@ -44,7 +45,7 @@ export default function Renderblock(props) {
           rich_text={value.rich_text}
           color={value.color}
           id={id}
-          children={value.children}
+          childrenBlock={value.children}
           toggle={value.is_toggleable}
         />
       )
@@ -63,7 +64,12 @@ export default function Renderblock(props) {
       )
     case 'toggle':
       return (
-        <Toggle rich_text={value.rich_text} color={value.color} children={value.children} id={id} />
+        <Toggle
+          rich_text={value.rich_text}
+          color={value.color}
+          childrenBlock={value.children}
+          id={id}
+        />
       )
     case 'code':
       const captionCode = value.caption[0] ? value.caption[0].plain_text : ''
@@ -73,7 +79,7 @@ export default function Renderblock(props) {
     case 'image':
       const src = value.type === 'external' ? value.external.url : value.file.url
       const ImageCaption = value.caption[0] ? value.caption[0].plain_text : ''
-      return <Image src={src} caption={ImageCaption} />
+      return <ImageBlock src={src} caption={ImageCaption} />
     case 'eqation':
       return <div>{value.expression}</div>
     case 'divider':
