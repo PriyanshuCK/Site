@@ -50,5 +50,6 @@ export const getStaticProps = async () => {
     props: {
       tags,
     },
+    revalidate: 1,
   }
 }

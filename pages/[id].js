@@ -152,7 +152,7 @@ export const getStaticPaths = async () => {
     paths: database.map((page) => ({
       params: { id: page.properties.slug.rich_text[0].plain_text },
     })),
-    fallback: false,
+    fallback: true,
   }
 }
 

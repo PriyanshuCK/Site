@@ -38,7 +38,7 @@ export const getStaticPaths = async () => {
     paths: tags.map((tag) => ({
       params: { id: tag },
     })),
-    fallback: false,
+    fallback: true,
   }
 }
 
