@@ -54,5 +54,6 @@ export const getStaticProps = async ({ params }) => {
       tag: id,
       posts,
     },
+    revalidate: 1,
   }
 }

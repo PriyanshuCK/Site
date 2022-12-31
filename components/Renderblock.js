@@ -1,5 +1,4 @@
 /* eslint-disable */
-import Pre from '../components/Pre'
 import Paragraph from './blocks/Paragraph'
 import Heading1 from './blocks/Heading1'
 import Heading2 from './blocks/Heading2'
