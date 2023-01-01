@@ -38,13 +38,18 @@ export const getStaticPaths = async () => {
     paths: tags.map((tag) => ({
       params: { id: tag },
     })),
-    fallback: true,
+    fallback: 'blocking',
   }
 }
 
 export const getStaticProps = async ({ params }) => {
   const { id } = params
   const database = await retrieveDatabase()
+  if (!database.id) {
+    return {
+      notFound: true,
+    }
+  }
   const posts = database.filter((page) =>
     page.properties.tags.multi_select.map((tag) => tag.name.toLowerCase()).includes(id)
   )

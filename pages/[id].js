@@ -89,56 +89,7 @@ export default function Post({ page, blocks, id }) {
                   </time>
                 </span>
               </div>
-              {/* <Comments frontMatter={frontMatter} /> */}
             </div>
-            {/* <footer>
-              <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
-                {tags && (
-                  <div className="py-4 xl:py-8">
-                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                      Tags
-                    </h2>
-                    <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {(next || prev) && (
-                  <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                    {prev && (
-                      <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Previous Article
-                        </h2>
-                        <div className="text-primary-700 hover:text-primary-600 dark:text-primary-300 dark:hover:text-primary-400">
-                          <Link href={`/${frontMatter.type}/${prev.slug}`}>{prev.title}</Link>
-                        </div>
-                      </div>
-                    )}
-                    {next && (
-                      <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Next Article
-                        </h2>
-                        <div className="text-primary-700 hover:text-primary-600 dark:text-primary-300 dark:hover:text-primary-400">
-                          <Link href={`/${frontMatter.type}/${next.slug}`}>{next.title}</Link>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-              <div className="pt-4 xl:pt-8">
-                <Link
-                  href={`/${frontMatter.type}`}
-                  className="text-primary-700 hover:text-primary-600 dark:text-primary-300 dark:hover:text-primary-400"
-                >
-                  &larr; Back to {frontMatter.type}
-                </Link>
-              </div>
-            </footer> */}
           </div>
         </div>
       </article>
@@ -152,13 +103,18 @@ export const getStaticPaths = async () => {
     paths: database.map((page) => ({
       params: { id: page.properties.slug.rich_text[0].plain_text },
     })),
-    fallback: true,
+    fallback: 'blocking',
   }
 }
 
 export const getStaticProps = async (context) => {
   const { id } = context.params
   const newId = await retrieveId(id)
+  if (!newId) {
+    return {
+      notFound: true,
+    }
+  }
   const page = await retrievePage(newId)
   const blocks = await retrieveBlocks(newId)
   const childBlocks = await Promise.all(
