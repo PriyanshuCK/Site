@@ -7,7 +7,7 @@ export default function Code({ rich_text, language, caption }) {
         {caption ? <span className="text-sm">{caption}</span> : ''}
       </span>
       <span>
-        <Pre codeText={rich_text[0].text.content} language={language} />
+        <Pre>{rich_text[0].text.content}</Pre>
       </span>
     </div>
   )

@@ -22,7 +22,7 @@ export default function Notes({ notes }) {
 export async function getStaticProps() {
   const database = await retrieveDatabase()
   const notes = database.filter((post) => {
-    return post.properties.type.select.name === 'Book Notes'
+    return post.properties.type.select.name === 'Notes'
   })
   return {
     props: {

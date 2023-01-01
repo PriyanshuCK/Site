@@ -48,7 +48,7 @@ export async function getStaticProps() {
     return post.properties.type.select.name === 'Journal'
   })
   const notes = database.filter((post) => {
-    return post.properties.type.select.name === 'Book Notes'
+    return post.properties.type.select.name === 'Notes'
   })
   return {
     props: {

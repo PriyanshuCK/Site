@@ -45,14 +45,14 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   const { id } = params
   const database = await retrieveDatabase()
-  if (!database.id) {
+  const posts = database.filter((page) =>
+    page.properties.tags.multi_select.map((tag) => tag.name.toLowerCase()).includes(id)
+  )
+  if (posts.length === 0) {
     return {
       notFound: true,
     }
   }
-  const posts = database.filter((page) =>
-    page.properties.tags.multi_select.map((tag) => tag.name.toLowerCase()).includes(id)
-  )
 
   return {
     props: {
