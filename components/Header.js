@@ -320,7 +320,7 @@ export default function Header() {
                             />
                             <div className="ml-4">
                               <p className="text-base font-medium text-gray-900 dark:text-gray-200">
-                                All Posts
+                                Sari Posts
                               </p>
                               <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                                 Browse through all the posts at one place.

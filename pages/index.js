@@ -2,17 +2,20 @@ import { PageSEO } from '../components/SEO'
 import siteMetadata from '../data/siteMetadata'
 import { retrieveDatabase } from '../api/notion'
 import Listposts from '../components/Listposts'
+import CommandPalette from '../components/CommandPalette'
 
 export default function Home({ posts, articles, blog, journal, notes }) {
-  const types = [posts, articles, blog, journal, notes]
+  const indexPosts = posts.slice(0, 3)
+  const types = [indexPosts, articles, blog, journal, notes]
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <CommandPalette posts={posts} />
       <section className="my-4 sm:my-10">
         {types.map((type) => {
           let typeStr = ''
           {
-            type === posts
+            type === indexPosts
               ? (typeStr = 'Latest Posts')
               : type === articles
               ? (typeStr = 'Articles')
@@ -52,7 +55,7 @@ export async function getStaticProps() {
   })
   return {
     props: {
-      posts: database.slice(0, 3),
+      posts: database,
       articles: articles.slice(0, 3),
       blog: blog.slice(0, 3),
       journal: journal.slice(0, 3),

@@ -6,6 +6,8 @@ import siteMetadata from '../data/siteMetadata'
 import Richtext from '../components/Richtext'
 import ScrollTopAndComment from '../components/ScrollTopAndComment'
 import SectionContainer from '../components/SectionContainer'
+import CommandPalette from '../components/CommandPalette'
+
 const postDateTemplate = {
   weekday: 'long',
   year: 'numeric',
@@ -22,7 +24,7 @@ const postTimeTemplate = {
 }
 import PageTitle from '../components/PageTitle'
 
-export default function Post({ page, blocks, id }) {
+export default function Post({ posts, page, blocks, id }) {
   if (!page || !blocks) {
     return <div> URL not found</div>
   }
@@ -36,6 +38,7 @@ export default function Post({ page, blocks, id }) {
         lastmod={page.last_edited_time}
       />
       <ScrollTopAndComment />
+      <CommandPalette posts={posts} />
       <article>
         <div className="lg:mx-auto lg:w-2/3 xl:divide-y-2 xl:divide-primary-200 xl:dark:divide-primary-400">
           <header className="pt-6 xl:pb-6">
@@ -115,6 +118,7 @@ export const getStaticProps = async (context) => {
       notFound: true,
     }
   }
+  const database = await retrieveDatabase()
   const page = await retrievePage(newId)
   const blocks = await retrieveBlocks(newId)
   const childBlocks = await Promise.all(
@@ -136,6 +140,7 @@ export const getStaticProps = async (context) => {
 
   return {
     props: {
+      posts: database,
       page,
       id,
       blocks: blocksWithChildren,

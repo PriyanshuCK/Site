@@ -2,6 +2,7 @@ import { Dialog, Combobox, Transition } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/outline'
 import { useState, useEffect, Fragment } from 'react'
 import { useRouter } from 'next/router'
+import formatDate from '../lib/utils/formatDate'
 
 function useScrollDirection() {
   const [scrollDirection, setScrollDirection] = useState(null)
@@ -29,12 +30,19 @@ function useScrollDirection() {
   return scrollDirection
 }
 
-export default function CommandPalette({ searchPosts }) {
+export default function CommandPalette({ posts }) {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState('')
   const filteredPosts = query
-    ? searchPosts.filter((post) => post.title.toLowerCase().includes(query.toLowerCase()))
+    ? posts.filter((post) => {
+        const date = formatDate(post.created_time)
+        const searchContent =
+          post.properties.name.title[0].plain_text +
+          post.properties.description.rich_text[0].plain_text +
+          date
+        return searchContent.toLowerCase().includes(query.toLowerCase())
+      })
     : []
   useEffect(() => {
     const onkeydown = (event) => {
@@ -99,7 +107,7 @@ export default function CommandPalette({ searchPosts }) {
               as="div"
               onChange={(post) => {
                 setIsOpen(false)
-                router.push(`/${post.type}/${post.slug}`)
+                router.push(`/${post.properties.slug.rich_text[0].plain_text}`)
               }}
               className="relative mx-auto max-w-xl divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black/5 dark:divide-gray-800 dark:bg-gray-900"
             >
@@ -119,7 +127,7 @@ export default function CommandPalette({ searchPosts }) {
                 <Combobox.Options static className="max-h-96 overflow-y-auto py-4 text-sm">
                   {filteredPosts.map((post) => {
                     return (
-                      <Combobox.Option key={post.slug + post.type} value={post}>
+                      <Combobox.Option key={post.id} value={post}>
                         {({ active }) => (
                           <div
                             className={`py-2 px-4 ${
@@ -128,7 +136,7 @@ export default function CommandPalette({ searchPosts }) {
                                 : ' bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200'
                             }`}
                           >
-                            {post.title}
+                            {post.properties.name.title[0].text.content}
                           </div>
                         )}
                       </Combobox.Option>
