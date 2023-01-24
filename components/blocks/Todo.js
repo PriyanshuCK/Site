@@ -7,7 +7,7 @@ export default function Todo({ rich_text, color, checked, id }) {
           type="checkbox"
           id={id}
           defaultChecked={checked}
-          className="text-primary-500 accent-primary-500 focus:ring-primary-500"
+          className="rounded-sm text-primary-500 accent-primary-500 focus:ring-primary-500"
         />{' '}
         <Richtext text={rich_text} color={color} id={id} />
       </label>

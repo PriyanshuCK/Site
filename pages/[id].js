@@ -72,7 +72,7 @@ export default function Post({ posts, page, blocks, id }) {
                   </Fragment>
                 ))}
               </div>
-              <div className="flex flex-col pt-8">
+              <div className="flex flex-col pt-8 text-center">
                 <span className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                   Published:&nbsp;
                   <time dateTime={page.created_time}>

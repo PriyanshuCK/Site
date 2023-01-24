@@ -84,7 +84,10 @@ export default function CommandPalette({ posts }) {
         <SearchIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
       </button>
       <Transition.Root show={isOpen} as={Fragment} afterLeave={() => setQuery('')}>
-        <Dialog onClose={setIsOpen} className="fixed inset-0 z-50 overflow-y-auto p-4 pt-[25vh]">
+        <Dialog
+          onClose={setIsOpen}
+          className="fixed inset-0 z-50 overflow-y-auto p-4 pt-[15vh] md:pt-[20vh]"
+        >
           <Transition.Child
             enter="duration-300 ease-out"
             enterFrom="opacity-0"
@@ -109,7 +112,7 @@ export default function CommandPalette({ posts }) {
                 setIsOpen(false)
                 router.push(`/${post.properties.slug.rich_text[0].plain_text}`)
               }}
-              className="relative mx-auto max-w-xl divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black/5 dark:divide-gray-800 dark:bg-gray-900"
+              className="relative mx-auto max-w-2xl divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black/5 dark:divide-gray-800 dark:bg-gray-900"
             >
               <div className="flex items-center px-4">
                 <SearchIcon className="h-6 w-6 text-gray-500 dark:text-gray-400" />
@@ -124,19 +127,53 @@ export default function CommandPalette({ posts }) {
                 />
               </div>
               {filteredPosts.length > 0 && (
-                <Combobox.Options static className="max-h-96 overflow-y-auto py-4 text-sm">
+                <Combobox.Options
+                  static
+                  className="max-h-[32rem] space-y-4 overflow-y-auto py-4 text-sm sm:divide-y-0"
+                >
                   {filteredPosts.map((post) => {
                     return (
-                      <Combobox.Option key={post.id} value={post}>
+                      <Combobox.Option key={post.id} value={post} className="">
                         {({ active }) => (
                           <div
-                            className={`py-2 px-4 ${
+                            className={`m-4 cursor-pointer space-y-1 rounded-lg border border-gray-100 py-2 px-4 first:mt-0 last:mb-0 ${
                               active
-                                ? 'bg-primary-600 text-white dark:bg-primary-300 dark:text-gray-800'
-                                : ' bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200'
+                                ? 'bg-primary-50 dark:bg-gray-800 dark:text-white'
+                                : ' bg-white dark:bg-gray-900'
                             }`}
                           >
-                            {post.properties.name.title[0].text.content}
+                            <h3 className="text-base font-medium">
+                              {post.properties.name.title[0].text.content}
+                            </h3>
+                            <div className="flex flex-row justify-between">
+                              <div className="w-fit rounded-full border-[1px] border-primary-500 px-2 py-1 text-[0.8125rem] dark:bg-gray-800">
+                                <time dateTime={post.created_time}>
+                                  {new Date(post.created_time).toLocaleDateString('en-IN', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                  })}
+                                </time>
+                              </div>
+                              <div className="w-fit rounded-full border-[1px] border-primary-500 px-2 py-1 text-[0.8125rem] dark:bg-gray-800">
+                                {post.properties.type.select.name}
+                              </div>
+                            </div>
+                            <div>{post.properties.description.rich_text[0].plain_text}</div>
+                            <div className="text-center">
+                              <span className="pt-2 text-sm">
+                                <ul>
+                                  {post.properties.tags.multi_select.map((tag) => (
+                                    <li
+                                      key={tag.id}
+                                      className="mr-3 inline text-[0.8125rem] uppercase text-primary-700 hover:text-primary-600 dark:text-primary-300 dark:hover:text-primary-400"
+                                    >
+                                      {tag.name}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </span>
+                            </div>
                           </div>
                         )}
                       </Combobox.Option>
@@ -145,7 +182,9 @@ export default function CommandPalette({ posts }) {
                 </Combobox.Options>
               )}
               {query && filteredPosts.length === 0 && (
-                <p className="p-4 text-sm text-gray-500 dark:text-gray-400">No Posts Found!</p>
+                <p className="p-4 text-center text-sm text-gray-500 dark:text-gray-400">
+                  No results for "{query}"
+                </p>
               )}
             </Combobox>
           </Transition.Child>
