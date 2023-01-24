@@ -136,17 +136,18 @@ export default function CommandPalette({ posts }) {
                       <Combobox.Option key={post.id} value={post} className="">
                         {({ active }) => (
                           <div
-                            className={`m-4 cursor-pointer space-y-1 rounded-lg border border-gray-100 py-2 px-4 first:mt-0 last:mb-0 ${
-                              active
-                                ? 'bg-primary-50 dark:bg-gray-800 dark:text-white'
-                                : ' bg-white dark:bg-gray-900'
-                            }`}
+                            className={`m-4 cursor-pointer space-y-1 rounded-lg border border-gray-100 py-2
+                             px-4 first:mt-0 last:mb-0 dark:border-gray-800 ${
+                               active
+                                 ? 'bg-primary-50 dark:bg-gray-800 dark:text-white'
+                                 : ' bg-white dark:bg-gray-900'
+                             }`}
                           >
                             <h3 className="text-base font-medium">
                               {post.properties.name.title[0].text.content}
                             </h3>
                             <div className="flex flex-row justify-between">
-                              <div className="w-fit rounded-full border-[1px] border-primary-500 px-2 py-1 text-[0.8125rem] dark:bg-gray-800">
+                              <div className="w-fit rounded-full border-[1px] border-primary-500 px-2 py-1 text-[0.8125rem] dark:border-primary-400">
                                 <time dateTime={post.created_time}>
                                   {new Date(post.created_time).toLocaleDateString('en-IN', {
                                     year: 'numeric',
@@ -155,7 +156,7 @@ export default function CommandPalette({ posts }) {
                                   })}
                                 </time>
                               </div>
-                              <div className="w-fit rounded-full border-[1px] border-primary-500 px-2 py-1 text-[0.8125rem] dark:bg-gray-800">
+                              <div className="w-fit rounded-full border-[1px] border-primary-500 px-2 py-1 text-[0.8125rem] dark:border-primary-400">
                                 {post.properties.type.select.name}
                               </div>
                             </div>
