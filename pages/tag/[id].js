@@ -2,8 +2,9 @@ import { retrieveDatabase } from '../../api/notion'
 import { PageSEO } from '../../components/SEO'
 import siteMetadata from '../../data/siteMetadata'
 import ListLayout from '../../layouts/ListLayout'
+import CommandPalette from '../components/CommandPalette'
 
-export default function Tag({ posts, tag }) {
+export default function Tag({ posts, tag, sPosts }) {
   return (
     <>
       <PageSEO
@@ -12,6 +13,8 @@ export default function Tag({ posts, tag }) {
           tag[0].toUpperCase() + tag.substring(1)
         }`}
       />
+      <CommandPalette posts={sPosts} />
+
       <ListLayout
         posts={posts}
         title={`Tag: ${tag[0].toUpperCase() + tag.substring(1)}`}
@@ -58,6 +61,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       tag: id,
       posts,
+      sPosts: database,
     },
     revalidate: 1,
   }

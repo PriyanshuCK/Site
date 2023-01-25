@@ -31,7 +31,7 @@ const ScrollTopAndComment = () => {
           aria-label="Scroll To Comment"
           type="button"
           onClick={handleScrollToComment}
-          className="rounded-full bg-primary-50 p-2 text-primary-500 transition-all dark:bg-gray-700 dark:text-primary-400 md:hover:bg-gray-300 dark:md:hover:bg-gray-600"
+          className="rounded-full bg-primary-50 p-2 text-primary-500 shadow-lg shadow-primary-300/40 transition-all duration-300 dark:bg-gray-700 dark:text-primary-400 dark:shadow-gray-600/40 md:hover:scale-110 dark:md:hover:bg-gray-600"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ const ScrollTopAndComment = () => {
         aria-label="Scroll To Top"
         type="button"
         onClick={handleScrollTop}
-        className="rounded-full bg-primary-50 p-2 text-primary-500 transition-all dark:bg-gray-700 dark:text-primary-400 md:hover:bg-gray-300 dark:md:hover:bg-gray-600"
+        className="rounded-full bg-primary-50 p-2 text-primary-500 shadow-lg shadow-primary-300/40 transition-all duration-300 dark:bg-gray-700 dark:text-primary-400 dark:shadow-gray-600/40 md:hover:scale-110 dark:md:hover:bg-gray-600"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

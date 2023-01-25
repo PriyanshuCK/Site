@@ -2,11 +2,14 @@ import { PageSEO } from '../components/SEO'
 import siteMetadata from '../data/siteMetadata'
 import { retrieveDatabase } from '../api/notion'
 import Link from 'next/link'
+import CommandPalette from '../components/CommandPalette'
 
-export default function Tags({ tags }) {
+export default function Tags({ tags, posts }) {
   return (
     <>
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Tags" />
+      <CommandPalette posts={posts} />
+
       <div className="flex flex-col items-center divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 md:space-y-5">
           <h1 className="px-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -48,6 +51,8 @@ export const getStaticProps = async () => {
   ]
   return {
     props: {
+      posts: database,
+
       tags,
     },
     revalidate: 1,

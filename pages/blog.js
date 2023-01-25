@@ -2,11 +2,14 @@ import siteMetadata from '../data/siteMetadata'
 import ListLayout from '../layouts/ListLayout'
 import { PageSEO } from '../components/SEO'
 import { retrieveDatabase } from '../api/notion'
+import CommandPalette from '../components/CommandPalette'
 
-export default function Blog({ blog }) {
+export default function Blog({ blog, posts }) {
   return (
     <>
       <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <CommandPalette posts={posts} />
+
       <ListLayout
         posts={blog}
         title="Blog"
@@ -23,6 +26,8 @@ export async function getStaticProps() {
   })
   return {
     props: {
+      posts: database,
+
       blog,
     },
     revalidate: 1,

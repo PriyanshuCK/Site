@@ -77,8 +77,8 @@ export default function CommandPalette({ posts }) {
         aria-label="Search"
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-lg border-2 border-primary-200 p-2 text-base transition-all duration-300 hover:border-primary-300 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(86px)] lg:left-[calc(264px)] xl:left-[calc(50%-90px)]  ${
-          scrollDirection === 'down' ? '-top-24' : 'top-[10px]'
+        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-lg border-2 border-primary-200 p-2 text-base transition-all duration-300 hover:border-primary-300 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(86px)] lg:left-[calc(264px)] xl:left-[calc(50%-110px)]  ${
+          scrollDirection === 'down' ? '-top-24' : 'top-[8px]'
         }`}
       >
         <SearchIcon className="mr-2 inline h-5 w-5 text-gray-500 dark:text-gray-400" />
@@ -128,7 +128,7 @@ export default function CommandPalette({ posts }) {
                     setQuery(event.target.value)
                   }}
                   className=" h-12 w-full border-0 bg-transparent text-sm text-gray-800 placeholder-gray-400 caret-primary-500 focus:ring-0 dark:text-gray-200 dark:placeholder-gray-500"
-                  placeholder="Search or '/' to focus"
+                  placeholder="Search title, date or description"
                   autoComplete="off"
                   type="text"
                 />
