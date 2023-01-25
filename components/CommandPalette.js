@@ -77,11 +77,18 @@ export default function CommandPalette({ posts }) {
         aria-label="Search"
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed left-[calc(50%-16px)] z-10 scale-90 rounded-lg border-2 border-primary-200 p-2 text-base transition-all duration-300 hover:border-primary-300 dark:border-gray-700 dark:hover:border-gray-600 sm:left-[calc(50%-24px)] md:left-[calc(86px)] lg:left-[calc(50%-24px)]  ${
+        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-lg border-2 border-primary-200 p-2 text-base transition-all duration-300 hover:border-primary-300 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(86px)] lg:left-[calc(264px)] xl:left-[calc(50%-90px)]  ${
           scrollDirection === 'down' ? '-top-24' : 'top-[10px]'
         }`}
       >
-        <SearchIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+        <SearchIcon className="mr-2 inline h-5 w-5 text-gray-500 dark:text-gray-400" />
+        <span className="mr-2 text-sm text-gray-500 dark:text-gray-400">Quick Search</span>
+        <span className="hidden text-sm font-medium text-gray-500 dark:text-gray-400 md:inline">
+          'Ctrl K'
+          <span className="hidden lg:inline">
+            <span className="font-normal"> or</span> '/'
+          </span>
+        </span>
       </button>
       <Transition.Root show={isOpen} as={Fragment} afterLeave={() => setQuery('')}>
         <Dialog
