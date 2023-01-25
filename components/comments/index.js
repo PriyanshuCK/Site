@@ -1,4 +1,4 @@
-import siteMetadata from '../data/siteMetadata'
+import siteMetadata from '../../data/siteMetadata'
 import dynamic from 'next/dynamic'
 
 const GiscusComponent = dynamic(
@@ -8,7 +8,7 @@ const GiscusComponent = dynamic(
   { ssr: false }
 )
 
-const Comments = ({ frontMatter }) => {
+const Comments = () => {
   const comment = siteMetadata?.comment
   if (!comment || Object.keys(comment).length === 0) return <></>
   return (

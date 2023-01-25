@@ -4,6 +4,7 @@ import Renderblock from '../components/Renderblock'
 import { BlogSEO } from '../components/SEO'
 import siteMetadata from '../data/siteMetadata'
 import Richtext from '../components/Richtext'
+import Comments from '../components/comments'
 import ScrollTopAndComment from '../components/ScrollTopAndComment'
 import SectionContainer from '../components/SectionContainer'
 import CommandPalette from '../components/CommandPalette'
@@ -63,7 +64,7 @@ export default function Post({ posts, page, blocks, id }) {
               </div>
             </div>
           </header>
-          <div className="divide-y divide-gray-200 pb-8 dark:divide-gray-700">
+          <div className="divide-y divide-gray-200 dark:divide-gray-700">
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">
                 {blocks.map((block) => (
@@ -91,6 +92,7 @@ export default function Post({ posts, page, blocks, id }) {
                     )}
                   </time>
                 </span>
+                <Comments />
               </div>
             </div>
           </div>

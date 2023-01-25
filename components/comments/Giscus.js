@@ -70,7 +70,7 @@ const Giscus = () => {
           Load Comments
         </button>
       )}
-      <div className="giscus" id={COMMENTS_ID} />
+      <div className="giscus min-h-0" id={COMMENTS_ID} />
     </div>
   )
 }
