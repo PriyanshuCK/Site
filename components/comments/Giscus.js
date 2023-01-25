@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useTheme } from 'next-themes'
-
 import siteMetadata from '../../data/siteMetadata'
+import { useRouter } from 'next/router'
 
 const Giscus = () => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true)
@@ -58,7 +58,7 @@ const Giscus = () => {
     const iframe = document.querySelector('iframe.giscus-frame')
     if (!iframe) return
     LoadComments()
-  }, [LoadComments])
+  }, [LoadComments, useRouter().asPath])
 
   return (
     <div className="py-6 text-center text-gray-700 dark:text-gray-300">
