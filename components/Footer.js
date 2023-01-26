@@ -46,7 +46,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="self-center justify-self-center">
-            <iframe src="https://priyanshuck.substack.com/embed" width="48" height="32"></iframe>
+            <iframe src="https://priyanshuck.substack.com/embed" width="480" height="320"></iframe>
           </div>
         </div>
 
