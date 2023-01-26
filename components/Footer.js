@@ -46,18 +46,13 @@ export default function Footer() {
             </p>
           </div>
           <div className="self-center justify-self-center">
-            <iframe
-              src="https://priyanshuck.substack.com/embed"
-              width="480"
-              height="320"
-              frameborder="0"
-            ></iframe>
+            <iframe src="https://priyanshuck.substack.com/embed" width="48" height="32"></iframe>
           </div>
         </div>
 
         <div className="mt-6">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:grid-cols-6">
-            <div className="col-span-2 flex w-full flex-col items-center justify-center sm:col-span-4 md:col-span-2">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
+            <div className="col-span-2 flex w-full flex-col items-center justify-center md:col-span-4 lg:col-span-2">
               <Link href="/" className="flex items-center">
                 <Icon />
                 <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
