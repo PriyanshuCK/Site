@@ -54,11 +54,12 @@ const Giscus = () => {
     }
   }, [commentsTheme])
 
+  const route = useRouter().asPath
   useEffect(() => {
     const iframe = document.querySelector('iframe.giscus-frame')
     if (!iframe) return
     LoadComments()
-  }, [LoadComments, useRouter().asPath])
+  }, [LoadComments, route])
 
   return (
     <div className="py-6 text-center text-gray-700 dark:text-gray-300">

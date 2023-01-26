@@ -2,7 +2,7 @@ import { retrieveDatabase } from '../../api/notion'
 import { PageSEO } from '../../components/SEO'
 import siteMetadata from '../../data/siteMetadata'
 import ListLayout from '../../layouts/ListLayout'
-import CommandPalette from '../components/CommandPalette'
+import CommandPalette from '../../components/CommandPalette'
 
 export default function Tag({ posts, tag, sPosts }) {
   return (
@@ -14,7 +14,6 @@ export default function Tag({ posts, tag, sPosts }) {
         }`}
       />
       <CommandPalette posts={sPosts} />
-
       <ListLayout
         posts={posts}
         title={`Tag: ${tag[0].toUpperCase() + tag.substring(1)}`}

@@ -32,3 +32,5 @@ export const retrieveId = async (slug) => {
   }
   return id
 }
+
+export default retrieveDatabase

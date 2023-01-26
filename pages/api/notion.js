@@ -2,13 +2,13 @@ const { Client } = require('@notionhq/client')
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
-const api = async (req, res) => {
+const retrieveDatabase = async (req, res) => {
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DB_LIBRARY_ID,
   })
   res.status(200).json({ response })
 }
-export default api
+export default retrieveDatabase
 
 // const response = await notion.databases.query({
 //   database_id: process.env.NOTION_DB_LIBRARY_ID,

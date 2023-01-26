@@ -1,7 +1,7 @@
 import { PageSEO } from '../components/SEO'
 import siteMetadata from '../data/siteMetadata'
 import CommandPalette from '../components/CommandPalette'
-import retrieveDatabase from '../api/notion'
+import { retrieveDatabase } from '../api/notion'
 
 export default function Now({ posts }) {
   return (

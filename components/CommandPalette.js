@@ -132,6 +132,14 @@ export default function CommandPalette({ posts }) {
                   autoComplete="off"
                   type="text"
                 />
+                <button
+                  onClick={() => {
+                    setIsOpen(false)
+                  }}
+                  className="inline rounded-lg border-2 border-gray-500 px-2 py-1 text-xs text-gray-500 dark:border-gray-400 dark:text-gray-400"
+                >
+                  <div>Esc</div>
+                </button>
               </div>
               {filteredPosts.length > 0 && (
                 <Combobox.Options

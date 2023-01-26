@@ -16,7 +16,7 @@ export default function Home({ posts, articles, blog, journal, notes }) {
           let typeStr = ''
           {
             type === indexPosts
-              ? (typeStr = 'Latest Posts')
+              ? (typeStr = 'Recent Posts')
               : type === articles
               ? (typeStr = 'Articles')
               : type === blog

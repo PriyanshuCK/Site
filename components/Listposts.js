@@ -41,7 +41,7 @@ export default function Listposts({ posts }) {
                         href={`/${post.properties.slug.rich_text[0].plain_text}`}
                         aria-label={`Read "${post.properties.name.title[0].text.content}"`}
                       >
-                        Read more &rarr;
+                        Read &rarr;
                       </Link>
                     </span>
                   </div>
