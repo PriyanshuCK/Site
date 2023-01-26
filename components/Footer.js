@@ -37,8 +37,8 @@ export default function Footer() {
           </g>
         </g>
       </svg>
-      <footer className="z-10 bg-primary-50 p-4 dark:bg-gray-800 sm:p-6">
-        {/* <div className="grid grid-cols-1 content-center gap-4 pt-6 pb-6 sm:grid-cols-2 sm:gap-0 sm:pt-0">
+      <footer className="z-10 bg-primary-50 p-4 dark:bg-gray-800 lg:p-6">
+        <div className="grid grid-cols-1 content-center gap-4 pt-6 pb-6 lg:grid-cols-2 lg:gap-0 lg:pt-0">
           <div className="self-center px-8">
             <p className="text-center leading-relaxed">
               Subscribe to my newsletter, where I share my learnings from the content I consume and
@@ -46,9 +46,15 @@ export default function Footer() {
             </p>
           </div>
           <div className="self-center justify-self-center">
-            <NewsletterForm />
+            <iframe
+              src="https://priyanshuck.substack.com/embed"
+              width="480"
+              height="320"
+              frameborder="0"
+            ></iframe>
           </div>
-        </div> */}
+        </div>
+
         <div className="mt-6">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:grid-cols-6">
             <div className="col-span-2 flex w-full flex-col items-center justify-center sm:col-span-4 md:col-span-2">
