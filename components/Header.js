@@ -398,19 +398,19 @@ export default function Header() {
                         </span>
                       </Link>
                     ))}
-                    {/* <Link
-                    key="newsletter"
-                    href="/newsletter"
-                    className="-m-3 flex items-center rounded-md p-3 hover:bg-primary-50 dark:hover:bg-gray-800"
-                  >
-                    <MailOpenIcon
-                      className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-3 text-base font-medium text-gray-900 dark:text-gray-200">
-                      Thursday Thoughts
-                    </span>
-                  </Link> */}
+                    <Link
+                      key="newsletter"
+                      href="/newsletter"
+                      className="-m-3 flex items-center rounded-md p-3 hover:bg-primary-50 dark:hover:bg-gray-800"
+                    >
+                      <MailOpenIcon
+                        className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-3 text-base font-medium text-gray-900 dark:text-gray-200">
+                        Thursday Thoughts
+                      </span>
+                    </Link>
                     <Link
                       key="posts"
                       href="/posts"

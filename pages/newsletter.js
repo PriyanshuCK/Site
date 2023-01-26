@@ -11,11 +11,11 @@ export default function About({ posts }) {
         description="Sharing my learnings and valuable insights from the content I consume"
       />
       <CommandPalette posts={posts} />
-      <div class="lg:mx-auto lg:w-2/3 xl:divide-y-2 xl:divide-primary-200 xl:dark:divide-primary-400">
-        <header class="pt-6 xl:pb-6">
-          <div class="space-y-1 text-center">
+      <div className="lg:mx-auto lg:w-2/3 xl:divide-y-2 xl:divide-primary-200 xl:dark:divide-primary-400">
+        <header className="pt-6 xl:pb-6">
+          <div className="space-y-1 text-center">
             <div>
-              <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+              <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
                 Thursday Thoughts
               </h1>
             </div>
