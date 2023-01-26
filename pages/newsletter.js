@@ -7,7 +7,7 @@ export default function About({ posts }) {
   return (
     <>
       <PageSEO
-        title={`Newsletter - ${siteMetadata.author}`}
+        title={`Thursday Thoughts - ${siteMetadata.author}`}
         description="Sharing my learnings and valuable insights from the content I consume"
       />
       <CommandPalette posts={posts} />
@@ -22,12 +22,22 @@ export default function About({ posts }) {
           </div>
         </header>
         <div className="flex flex-col items-center py-10">
+          <p className="text-center">
+            I love sharing my knowledge and insights with others, and that is what inspired me to
+            start this newsletter and the website.
+          </p>
+          <p className="text-center">
+            Subscribe to my newsletter where I share my learnings and valuable insights from the
+            content I consume.
+          </p>
           <iframe
-            className="mx-auto w-1/2"
+            className="my-6 h-40 rounded-2xl  md:mx-auto md:w-1/2"
             src="https://priyanshuck.substack.com/embed"
-            width="480"
-            height="320"
           ></iframe>
+          <p className="text-center">
+            Each Thursday, you will receive an email from me featuring my learnings of the week on a
+            variety of topics, including personal development, productivity, and self-improvement.
+          </p>
         </div>
       </div>
     </>
