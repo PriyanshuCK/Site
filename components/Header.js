@@ -233,11 +233,11 @@ export default function Header() {
                         <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 dark:ring-gray-800">
                           <div className="relative grid gap-6 bg-white px-5 py-6 dark:bg-gray-900 sm:gap-8 sm:p-8">
                             <Link
-                              href="/"
-                              className="-m-3 flex cursor-not-allowed items-start rounded-lg p-3 hover:bg-red-50 dark:hover:bg-gray-800"
+                              href="/newsletter"
+                              className="-m-3 flex items-start rounded-lg p-3 hover:bg-primary-50 dark:hover:bg-gray-800"
                             >
                               <MailOpenIcon
-                                className="h-6 w-6 flex-shrink-0 text-red-600 dark:text-red-400"
+                                className="h-6 w-6 flex-shrink-0 text-primary-600 dark:text-primary-400"
                                 aria-hidden="true"
                               />
                               <div className="ml-4">
@@ -245,10 +245,8 @@ export default function Header() {
                                   Thursday Thoughts
                                 </p>
                                 <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                                  Sorry for the disruption to our newsletter service due to the shut
-                                  down of Revue by Twitter. I'm working on finding a new solution
-                                  and hope to continue the newsletter soon. Thank you for your
-                                  patience and understanding.
+                                  Subscribe to my newsletter where I share my learnings and valuable
+                                  insights from the content I consume
                                 </p>
                               </div>
                             </Link>

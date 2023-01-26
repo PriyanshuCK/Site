@@ -1,22 +1,10 @@
 import Link from './Link'
 import Icon from '../components/Icon.js'
-import NewsletterForm from './NewsletterForm'
-import Script from 'next/script'
+// import NewsletterForm from './NewsletterForm'
 let weekday = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][
   new Date().getDay()
 ]
-const CustomSubstackWidget = {
-  substackUrl: 'priyanshuck.substack.com',
-  placeholder: 'example@gmail.com',
-  buttonText: 'Subscribe',
-  theme: 'custom',
-  colors: {
-    primary: '#ECFDF5',
-    input: '#ECFDF5',
-    email: '#000000',
-    text: '#34D399',
-  },
-}
+
 export default function Footer() {
   return (
     <>
@@ -51,18 +39,6 @@ export default function Footer() {
         </g>
       </svg>
       <footer className="z-10 bg-primary-50 p-4 dark:bg-gray-800 lg:p-6">
-        <div className="grid grid-cols-1 content-center gap-4 pt-6 pb-6 lg:grid-cols-2 lg:gap-0 lg:pt-0">
-          <div className="self-center px-8">
-            <p className="text-center leading-relaxed">
-              Subscribe to my newsletter, where I share my learnings from the content I consume and
-              valuable insights from the web.
-            </p>
-          </div>
-          <div className="self-center justify-self-center">
-            <div id="custom-substack-embed"></div>
-          </div>
-        </div>
-
         <div className="mt-6">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
             <div className="col-span-2 flex w-full flex-col items-center justify-center md:col-span-4 lg:col-span-2">
@@ -213,7 +189,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <Script src="https://substackapi.com/widget.js" async></Script>
     </>
   )
 }
