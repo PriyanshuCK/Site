@@ -1,9 +1,22 @@
 import Link from './Link'
 import Icon from '../components/Icon.js'
 import NewsletterForm from './NewsletterForm'
+import Script from 'next/script'
 let weekday = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][
   new Date().getDay()
 ]
+const CustomSubstackWidget = {
+  substackUrl: 'priyanshuck.substack.com',
+  placeholder: 'example@gmail.com',
+  buttonText: 'Subscribe',
+  theme: 'custom',
+  colors: {
+    primary: '#ECFDF5',
+    input: '#ECFDF5',
+    email: '#000000',
+    text: '#34D399',
+  },
+}
 export default function Footer() {
   return (
     <>
@@ -46,7 +59,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="self-center justify-self-center">
-            <iframe src="https://priyanshuck.substack.com/embed" width="480" height="320"></iframe>
+            <div id="custom-substack-embed"></div>
           </div>
         </div>
 
@@ -200,6 +213,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+      <Script src="https://substackapi.com/widget.js" async></Script>
     </>
   )
 }
