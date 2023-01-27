@@ -33,7 +33,7 @@ export default function ListLayout({ posts, title, typeDescription }) {
                 setSearchQuery(event.target.value)
               }}
               placeholder={`Search ${title}`}
-              className="w-full rounded-full border-none bg-white px-4 py-3 text-gray-900 caret-primary-500 shadow-md focus:border-primary-500/0 focus:ring-primary-500/0 dark:bg-gray-800 dark:text-gray-100"
+              className="w-full rounded-full border-none bg-white px-4 py-3 text-gray-900 caret-primary-500 shadow-md focus:outline-none dark:bg-gray-800 dark:text-gray-100"
             />
           </div>
         </div>
