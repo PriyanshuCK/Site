@@ -126,7 +126,10 @@ export default function Header() {
                 <MenuIcon className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
             </div>
-            <Popover.Group as="nav" className="hidden space-x-10 align-middle md:flex">
+            <Popover.Group
+              as="nav"
+              className="hidden -translate-x-5 space-x-10 align-middle md:flex"
+            >
               <Popover className="relative translate-y-2">
                 {({ open }) => (
                   <>

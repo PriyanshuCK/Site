@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+
 class MyDocument extends Document {
   render() {
     return (
@@ -23,7 +24,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#fff" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
-        <body className="min-h-screen bg-white text-black antialiased transition-all duration-300 selection:bg-primary-200 selection:text-primary-900 dark:bg-gray-900 dark:text-white">
+        <body className="min-h-screen bg-white text-black antialiased transition-all duration-300 dark:bg-gray-900 dark:text-white">
           <Main />
           <NextScript />
         </body>

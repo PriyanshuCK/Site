@@ -77,13 +77,13 @@ export default function CommandPalette({ posts }) {
         aria-label="Search"
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-lg border-2 border-primary-200 p-2 text-base transition-all duration-300 hover:border-primary-300 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(86px)] lg:left-[calc(264px)] xl:left-[calc(50%-110px)]  ${
+        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-lg border-2 border-primary-200 p-2 text-base transition-all duration-300 hover:border-primary-300 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(76px)] lg:left-[calc(264px)] xl:left-[calc(50%-110px)]  ${
           scrollDirection === 'down' ? '-top-24' : 'top-[8px]'
         }`}
       >
         <SearchIcon className="mr-2 inline h-5 w-5 text-gray-500 dark:text-gray-400" />
         <span className="mr-2 text-sm text-gray-500 dark:text-gray-400">Quick Search</span>
-        <span className="hidden text-sm font-medium text-gray-500 dark:text-gray-400 md:inline">
+        <span className="hidden text-sm font-medium text-gray-500 dark:text-gray-400 lg:inline">
           'Ctrl K'
           <span className="hidden lg:inline">
             <span className="font-normal"> or</span> '/'
@@ -151,18 +151,21 @@ export default function CommandPalette({ posts }) {
                       <Combobox.Option key={post.id} value={post} className="">
                         {({ active }) => (
                           <div
-                            className={`m-4 cursor-pointer space-y-1 rounded-lg border border-gray-100 py-2
-                             px-4 first:mt-0 last:mb-0 dark:border-gray-800 ${
+                            className={`m-4 cursor-pointer space-y-1 rounded-lg border border-gray-100 py-2 px-4
+                             shadow-sm first:mt-0 last:mb-0 dark:border-gray-800 ${
                                active
-                                 ? 'bg-primary-50 dark:bg-gray-800 dark:text-white'
+                                 ? 'bg-gradient-to-br from-slate-100 to-stone-100 dark:bg-gray-800 dark:bg-none dark:text-white'
                                  : ' bg-white dark:bg-gray-900'
                              }`}
                           >
                             <h3 className="text-base font-medium">
                               {post.properties.name.title[0].text.content}
                             </h3>
-                            <div className="flex flex-row justify-between">
-                              <div className="w-fit rounded-full border-[1px] border-primary-500 px-2 py-1 text-[0.8125rem] dark:border-primary-400">
+                            <div className="flex flex-row">
+                              <div className="pr-2 text-[0.8125rem] text-gray-600 dark:text-gray-400">
+                                {post.properties.type.select.name}
+                              </div>
+                              <div className="text-[0.8125rem] text-gray-600 dark:text-gray-400">
                                 <time dateTime={post.created_time}>
                                   {new Date(post.created_time).toLocaleDateString('en-IN', {
                                     year: 'numeric',
@@ -171,25 +174,8 @@ export default function CommandPalette({ posts }) {
                                   })}
                                 </time>
                               </div>
-                              <div className="w-fit rounded-full border-[1px] border-primary-500 px-2 py-1 text-[0.8125rem] dark:border-primary-400">
-                                {post.properties.type.select.name}
-                              </div>
                             </div>
                             <div>{post.properties.description.rich_text[0].plain_text}</div>
-                            <div className="text-center">
-                              <span className="pt-2 text-sm">
-                                <ul>
-                                  {post.properties.tags.multi_select.map((tag) => (
-                                    <li
-                                      key={tag.id}
-                                      className="mr-3 inline text-[0.8125rem] uppercase text-primary-700 hover:text-primary-600 dark:text-primary-300 dark:hover:text-primary-400"
-                                    >
-                                      {tag.name}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </span>
-                            </div>
                           </div>
                         )}
                       </Combobox.Option>

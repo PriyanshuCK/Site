@@ -27,8 +27,8 @@ function Icon() {
           y2="10.058"
           gradientUnits="userSpaceOnUse"
         >
-          <stop style={{ color: '#17FFB2' }} stopColor="currentColor"></stop>
-          <stop style={{ color: '#10B981' }} offset="1" stopColor="currentColor"></stop>
+          <stop className="text-primary-400" stopColor="currentColor"></stop>
+          <stop className="text-primary-600" offset="1" stopColor="currentColor"></stop>
         </linearGradient>
         <linearGradient
           id="paint1"
@@ -38,8 +38,8 @@ function Icon() {
           y2="14.77"
           gradientUnits="userSpaceOnUse"
         >
-          <stop style={{ color: '#17FFB2' }} stopColor="currentColor"></stop>
-          <stop style={{ color: '#10B981' }} offset="1" stopColor="currentColor"></stop>
+          <stop className="text-primary-400" stopColor="currentColor"></stop>
+          <stop className="text-primary-600" offset="1" stopColor="currentColor"></stop>
         </linearGradient>
       </defs>
     </svg>
