@@ -40,72 +40,31 @@ function useStickyState(defaultValue, key) {
   ]
 }
 
-function useScrollDirection() {
-  const [scrollDirection, setScrollDirection] = useState(null)
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY
-
-    const updateScrollDirection = () => {
-      const scrollY = window.scrollY
-      const direction = scrollY > lastScrollY ? 'down' : 'up'
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)
-      ) {
-        setScrollDirection(direction)
-      }
-      lastScrollY = scrollY > 0 ? scrollY : 0
-    }
-    window.addEventListener('scroll', updateScrollDirection)
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection)
-    }
-  }, [scrollDirection])
-
-  return scrollDirection
+const ThemeButton = ({ value, setColor }) => {
+  return (
+    <>
+      <div
+        className={`h-8 w-8 cursor-pointer rounded-full bg-${value}-500`}
+        onClick={() => {
+          setColor(value)
+        }}
+      ></div>
+    </>
+  )
 }
 
 const ColorSwitch = (props) => {
   const value = Math.floor(Math.random() * 16)
   const [color, setColor] = useStickyState(colors[value], 'theme-color')
-  const [isShowing1, setIsShowing] = useState(false)
-
-  const [show, setShow] = useState(false)
-
-  const scrollDirection = useScrollDirection()
-
-  useEffect(() => {
-    const handleWindowScroll = () => {
-      if (window.scrollY > 25) setShow(true)
-      else setShow(false)
-    }
-
-    window.addEventListener('scroll', handleWindowScroll)
-    return () => window.removeEventListener('scroll', handleWindowScroll)
-  }, [])
   useEffect(() => {
     props.getColor(color)
   }, [setColor])
 
   return (
     <>
-      <RadioGroup value={color} onChange={setColor}>
-        <RadioGroup.Label className="mt-5 block">Select a color:</RadioGroup.Label>
-        <div className="mt-2 flex justify-between space-x-8">
-          {colors.map((c) => {
-            return (
-              <RadioGroup.Option
-                className="ui-checked:text-onPrimaryBg ui-checked:bg-primaryBg ui-checked:ring-primary ui-not-checked:ring-onNeutralBg flex h-20 w-full cursor-pointer items-center justify-center font-bold uppercase ring-4"
-                value={c}
-                key={c}
-              >
-                {c}
-              </RadioGroup.Option>
-            )
-          })}
-        </div>
-      </RadioGroup>
+      {colors.map((color) => {
+        return <ThemeButton value={color} setColor={setColor} />
+      })}
       <div className="hidden">
         <div className="bg-red-50 shadow-red-500/50"></div>
         <div className="bg-orange-50 shadow-orange-500/50"></div>
