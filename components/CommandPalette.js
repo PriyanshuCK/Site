@@ -77,7 +77,7 @@ export default function CommandPalette({ posts }) {
         aria-label="Search"
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-lg border-2 border-primary-200 p-2 text-base transition-all duration-300 hover:border-primary-300 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(76px)] lg:left-[calc(264px)] xl:left-[calc(50%-110px)]  ${
+        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-lg border-2 border-primary-300 p-2 text-base transition-all duration-300 hover:border-primary-500 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(76px)] lg:left-[calc(264px)] xl:left-[calc(50%-110px)]  ${
           scrollDirection === 'down' ? '-top-24' : 'top-[8px]'
         }`}
       >
@@ -154,11 +154,11 @@ export default function CommandPalette({ posts }) {
                             className={`m-4 cursor-pointer space-y-1 rounded-lg border border-gray-100 py-2 px-4
                              shadow-sm first:mt-0 last:mb-0 dark:border-gray-800 ${
                                active
-                                 ? 'bg-gradient-to-br from-slate-100 to-stone-100 dark:bg-gray-800 dark:bg-none dark:text-white'
+                                 ? 'bg-gray-100 dark:bg-gray-800 dark:bg-none dark:text-white'
                                  : ' bg-white dark:bg-gray-900'
                              }`}
                           >
-                            <h3 className="text-base font-medium">
+                            <h3 className="text-lg font-medium">
                               {post.properties.name.title[0].text.content}
                             </h3>
                             <div className="flex flex-row">

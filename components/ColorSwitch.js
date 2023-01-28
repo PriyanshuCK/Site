@@ -95,9 +95,10 @@ const ColorSwitch = (props) => {
           <>
             <Popover.Button
               className={`
-                fixed right-[40px] z-[15] mx-4 mt-[76px] text-primary-400 focus:outline-none dark:text-primary-300 sm:right-[70px] md:right-[5px]`}
+                fixed right-[40px] z-[15] mx-4 mt-[68px] text-primary-400 focus:outline-none dark:text-primary-300 sm:right-[70px] md:right-[5px]`}
             >
-              <span>
+              <span className="inline-flex items-center justify-center rounded-md p-2 hover:bg-primary-100 focus:outline-none dark:hover:bg-gray-800">
+                <span className="sr-only">Open Color Switcher</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

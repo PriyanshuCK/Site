@@ -121,7 +121,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="-my-2 -mr-2 md:hidden">
-              <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-primary-100 hover:text-gray-500 focus:outline-none dark:text-gray-100 dark:hover:bg-gray-800">
+              <Popover.Button className="inline-flex items-center justify-center rounded-md p-2 text-primary-400 hover:bg-primary-100 hover:text-primary-500 focus:outline-none dark:text-gray-100 dark:hover:bg-gray-800">
                 <span className="sr-only">Open menu</span>
                 <MenuIcon className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
@@ -363,7 +363,7 @@ export default function Header() {
                   </div>
                   <ThemeSwitch />
                   <div className="-mr-2">
-                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-primary-100 hover:text-gray-500 focus:outline-none dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-100">
+                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-primary-400 hover:bg-primary-100 hover:text-primary-500 focus:outline-none dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-100">
                       <span className="sr-only">Close menu</span>
                       <XIcon className="h-6 w-6" aria-hidden="true" />
                     </Popover.Button>
