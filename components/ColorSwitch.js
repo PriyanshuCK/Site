@@ -90,83 +90,60 @@ const ColorSwitch = (props) => {
 
   return (
     <>
-      <div className="mt-24 overflow-hidden rounded-lg px-6 py-6 shadow-lg ring-1 ring-black ring-opacity-5">
-        <div>
-          <RadioGroup value={color} onChange={setColor}>
-            <RadioGroup.Label className="sr-only text-primary-500">Theme color</RadioGroup.Label>
-            <div className="hidden">
-              <div className="bg-red-50 shadow-red-500/50"></div>
-              <div className="bg-orange-50 shadow-orange-500/50"></div>
-              <div className="bg-amber-50 shadow-amber-500/50"></div>
-              <div className="bg-yellow-50 shadow-yellow-500/50"></div>
-              <div className="bg-lime-50 shadow-lime-500/50"></div>
-              <div className="bg-green-50 shadow-green-500/50"></div>
-              <div className="bg-emerald-50 shadow-emerald-500/50"></div>
-              <div className="bg-teal-50 shadow-teal-500/50"></div>
-              <div className="bg-cyan-50 shadow-cyan-500/50"></div>
-              <div className="bg-sky-50 shadow-sky-500/50"></div>
-              <div className="bg-blue-50 shadow-blue-500/50"></div>
-              <div className="bg-indigo-50 shadow-indigo-500/50"></div>
-              <div className="bg-violet-50 shadow-violet-500/50"></div>
-              <div className="bg-purple-50 shadow-purple-500/50"></div>
-              <div className="bg-fuchsia-50 shadow-fuchsia-500/50"></div>
-              <div className="bg-pink-50 shadow-pink-500/50"></div>
-              <div className="bg-rose-50 shadow-rose-500/50"></div>
-              <div className="bg-stone-50 shadow-stone-500/50"></div>
-
-              <div className="bg-red-500"></div>
-              <div className="bg-orange-500"></div>
-              <div className="bg-amber-500"></div>
-              <div className="bg-yellow-500"></div>
-              <div className="bg-lime-500"></div>
-              <div className="bg-green-500"></div>
-              <div className="bg-emerald-500"></div>
-              <div className="bg-teal-500"></div>
-              <div className="bg-cyan-500"></div>
-              <div className="bg-sky-500"></div>
-              <div className="bg-blue-500"></div>
-              <div className="bg-indigo-500"></div>
-              <div className="bg-violet-500"></div>
-              <div className="bg-purple-500"></div>
-              <div className="bg-fuchsia-500"></div>
-              <div className="bg-pink-500"></div>
-              <div className="bg-rose-500"></div>
-              <div className="bg-stone-500"></div>
-            </div>
-            <div className="flex flex-wrap justify-center gap-x-3 gap-y-6">
-              {colors.map((colour) => {
-                return (
-                  <>
-                    <RadioGroup.Option
-                      key={colour}
-                      value={colour}
-                      className="my-1 cursor-pointer rounded-full font-semibold capitalize focus:outline-none"
-                    >
-                      {({ checked }) => (
-                        <span
-                          key={colour}
-                          className={`${
-                            checked
-                              ? 'rounded-lg bg-primary-50 p-3 ring-1 ring-primary-500 ring-offset-2 ring-offset-white dark:bg-gray-700 dark:ring-offset-gray-800'
-                              : `rounded-lg p-3 bg-${colour}-50 dark:bg-gray-700`
-                          }`}
-                        >
-                          <span
-                            className={`${
-                              checked
-                                ? 'scale-105 rounded-full bg-primary-500 px-3 py-[2px] shadow-lg shadow-primary-500 dark:bg-primary-300'
-                                : `rounded-full px-3 py-[2px] bg-${colour}-500 dark:bg-${colour}-300 shadow-lg shadow-${colour}-500/50`
-                            }`}
-                          ></span>
-                        </span>
-                      )}
-                    </RadioGroup.Option>
-                  </>
-                )
-              })}
-            </div>
-          </RadioGroup>
+      <RadioGroup value={color} onChange={setColor}>
+        <RadioGroup.Label className="mt-5 block">Select a color:</RadioGroup.Label>
+        <div className="mt-2 flex justify-between space-x-8">
+          {colors.map((c) => {
+            return (
+              <RadioGroup.Option
+                className="ui-checked:text-onPrimaryBg ui-checked:bg-primaryBg ui-checked:ring-primary ui-not-checked:ring-onNeutralBg flex h-20 w-full cursor-pointer items-center justify-center font-bold uppercase ring-4"
+                value={c}
+                key={c}
+              >
+                {c}
+              </RadioGroup.Option>
+            )
+          })}
         </div>
+      </RadioGroup>
+      <div className="hidden">
+        <div className="bg-red-50 shadow-red-500/50"></div>
+        <div className="bg-orange-50 shadow-orange-500/50"></div>
+        <div className="bg-amber-50 shadow-amber-500/50"></div>
+        <div className="bg-yellow-50 shadow-yellow-500/50"></div>
+        <div className="bg-lime-50 shadow-lime-500/50"></div>
+        <div className="bg-green-50 shadow-green-500/50"></div>
+        <div className="bg-emerald-50 shadow-emerald-500/50"></div>
+        <div className="bg-teal-50 shadow-teal-500/50"></div>
+        <div className="bg-cyan-50 shadow-cyan-500/50"></div>
+        <div className="bg-sky-50 shadow-sky-500/50"></div>
+        <div className="bg-blue-50 shadow-blue-500/50"></div>
+        <div className="bg-indigo-50 shadow-indigo-500/50"></div>
+        <div className="bg-violet-50 shadow-violet-500/50"></div>
+        <div className="bg-purple-50 shadow-purple-500/50"></div>
+        <div className="bg-fuchsia-50 shadow-fuchsia-500/50"></div>
+        <div className="bg-pink-50 shadow-pink-500/50"></div>
+        <div className="bg-rose-50 shadow-rose-500/50"></div>
+        <div className="bg-stone-50 shadow-stone-500/50"></div>
+
+        <div className="bg-red-500"></div>
+        <div className="bg-orange-500"></div>
+        <div className="bg-amber-500"></div>
+        <div className="bg-yellow-500"></div>
+        <div className="bg-lime-500"></div>
+        <div className="bg-green-500"></div>
+        <div className="bg-emerald-500"></div>
+        <div className="bg-teal-500"></div>
+        <div className="bg-cyan-500"></div>
+        <div className="bg-sky-500"></div>
+        <div className="bg-blue-500"></div>
+        <div className="bg-indigo-500"></div>
+        <div className="bg-violet-500"></div>
+        <div className="bg-purple-500"></div>
+        <div className="bg-fuchsia-500"></div>
+        <div className="bg-pink-500"></div>
+        <div className="bg-rose-500"></div>
+        <div className="bg-stone-500"></div>
       </div>
     </>
   )
