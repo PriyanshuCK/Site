@@ -69,7 +69,7 @@ function useScrollDirection() {
 const ColorSwitch = (props) => {
   const value = Math.floor(Math.random() * 16)
   const [color, setColor] = useStickyState(colors[value], 'theme-color')
-  const [current, setcurrent] = useState(color)
+  const [current, setcurrent] = useStickyState(colors[value], 'theme-color')
 
   const [show, setShow] = useState(false)
   const scrollDirection = useScrollDirection()
