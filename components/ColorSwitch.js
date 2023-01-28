@@ -121,12 +121,12 @@ const ColorSwitch = (props) => {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <div className="fixed right-0 z-[15]">
-                <Popover.Panel
-                  className={`relative mx-5 mt-3 max-w-md transform rounded-lg bg-white/[0.50] backdrop-blur-md backdrop-filter transition-all duration-300 dark:bg-gray-900/[0.50] ${
-                    scrollDirection === 'down' ? '-top-80' : 'top-[110px]'
-                  }`}
-                >
+              <div
+                className={`fixed right-0 z-[15] mx-5 max-w-md transform rounded-lg bg-white/[0.50] backdrop-blur-md backdrop-filter transition-all duration-300 dark:bg-gray-900/[0.50] ${
+                  scrollDirection === 'down' ? '-top-80' : 'top-[64px]'
+                }`}
+              >
+                <Popover.Panel className={`relative`}>
                   <div className="overflow-hidden rounded-lg px-6 py-6 shadow-lg ring-1 ring-black ring-opacity-5">
                     <div>
                       <div className="flex flex-wrap justify-center gap-x-3 gap-y-1">
