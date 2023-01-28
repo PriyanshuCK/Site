@@ -10,6 +10,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app priyanshuck.substack.com substack.com substackapi.com googletagmanager.com;
   style-src 'self' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com *.google-analytics.com;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;

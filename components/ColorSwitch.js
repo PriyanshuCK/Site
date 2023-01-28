@@ -136,7 +136,7 @@ const ColorSwitch = (props) => {
                               key={color}
                               className={`my-1 flex h-12 w-12 scale-90 cursor-pointer items-center justify-center rounded-lg font-semibold capitalize focus:outline-none dark:bg-gray-700 bg-${color}-50 ${
                                 current === color
-                                  ? 'ring-1 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-800'
+                                  ? `ring-1 ring-${color}-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-800`
                                   : ''
                               }`}
                               onClick={() => {
@@ -147,7 +147,7 @@ const ColorSwitch = (props) => {
                               <div
                                 className={`bg-${color}-500 h-6 w-6  dark:bg-${color}-300 rounded-full shadow-lg ${
                                   current === color
-                                    ? 'shadow-primary-500'
+                                    ? `shadow-${color}-500`
                                     : `shadow-${color}-500/50`
                                 }`}
                               ></div>
@@ -164,43 +164,43 @@ const ColorSwitch = (props) => {
         )}
       </Popover>
       <div className="hidden">
-        <div className="bg-red-50 shadow-red-500/50"></div>
-        <div className="bg-orange-50 shadow-orange-500/50"></div>
-        <div className="bg-amber-50 shadow-amber-500/50"></div>
-        <div className="bg-yellow-50 shadow-yellow-500/50"></div>
-        <div className="bg-lime-50 shadow-lime-500/50"></div>
-        <div className="bg-green-50 shadow-green-500/50"></div>
-        <div className="bg-emerald-50 shadow-emerald-500/50"></div>
-        <div className="bg-teal-50 shadow-teal-500/50"></div>
-        <div className="bg-cyan-50 shadow-cyan-500/50"></div>
-        <div className="bg-sky-50 shadow-sky-500/50"></div>
-        <div className="bg-blue-50 shadow-blue-500/50"></div>
-        <div className="bg-indigo-50 shadow-indigo-500/50"></div>
-        <div className="bg-violet-50 shadow-violet-500/50"></div>
-        <div className="bg-purple-50 shadow-purple-500/50"></div>
-        <div className="bg-fuchsia-50 shadow-fuchsia-500/50"></div>
-        <div className="bg-pink-50 shadow-pink-500/50"></div>
-        <div className="bg-rose-50 shadow-rose-500/50"></div>
-        <div className="bg-stone-50 shadow-stone-500/50"></div>
+        <div className="bg-red-50 shadow-red-500/50 ring-red-500"></div>
+        <div className="bg-orange-50 shadow-orange-500/50 ring-orange-500"></div>
+        <div className="bg-amber-50 shadow-amber-500/50 ring-amber-500"></div>
+        <div className="bg-yellow-50 shadow-yellow-500/50 ring-yellow-500"></div>
+        <div className="bg-lime-50 shadow-lime-500/50 ring-lime-500"></div>
+        <div className="bg-green-50 shadow-green-500/50 ring-green-500"></div>
+        <div className="bg-emerald-50 shadow-emerald-500/50 ring-emerald-500"></div>
+        <div className="bg-teal-50 shadow-teal-500/50 ring-teal-500"></div>
+        <div className="bg-cyan-50 shadow-cyan-500/50 ring-cyan-500"></div>
+        <div className="bg-sky-50 shadow-sky-500/50 ring-sky-500"></div>
+        <div className="bg-blue-50 shadow-blue-500/50 ring-blue-500"></div>
+        <div className="bg-indigo-50 shadow-indigo-500/50 ring-indigo-500"></div>
+        <div className="bg-violet-50 shadow-violet-500/50 ring-violet-500"></div>
+        <div className="bg-purple-50 shadow-purple-500/50 ring-purple-500"></div>
+        <div className="bg-fuchsia-50 shadow-fuchsia-500/50 ring-fuchsia-500"></div>
+        <div className="bg-pink-50 shadow-pink-500/50 ring-pink-500"></div>
+        <div className="bg-rose-50 shadow-rose-500/50 ring-rose-500"></div>
+        <div className="bg-stone-50 shadow-stone-500/50 ring-stone-500"></div>
 
-        <div className="bg-red-500"></div>
-        <div className="bg-orange-500"></div>
-        <div className="bg-amber-500"></div>
-        <div className="bg-yellow-500"></div>
-        <div className="bg-lime-500"></div>
-        <div className="bg-green-500"></div>
-        <div className="bg-emerald-500"></div>
-        <div className="bg-teal-500"></div>
-        <div className="bg-cyan-500"></div>
-        <div className="bg-sky-500"></div>
-        <div className="bg-blue-500"></div>
-        <div className="bg-indigo-500"></div>
-        <div className="bg-violet-500"></div>
-        <div className="bg-purple-500"></div>
-        <div className="bg-fuchsia-500"></div>
-        <div className="bg-pink-500"></div>
-        <div className="bg-rose-500"></div>
-        <div className="bg-stone-500"></div>
+        <div className="bg-red-500 shadow-red-500"></div>
+        <div className="bg-orange-500 shadow-orange-500"></div>
+        <div className="bg-amber-500 shadow-amber-500"></div>
+        <div className="bg-yellow-500 shadow-yellow-500"></div>
+        <div className="bg-lime-500 shadow-lime-500"></div>
+        <div className="bg-green-500 shadow-green-500"></div>
+        <div className="bg-emerald-500 shadow-emerald-500"></div>
+        <div className="bg-teal-500 shadow-teal-500"></div>
+        <div className="bg-cyan-500 shadow-cyan-500"></div>
+        <div className="bg-sky-500 shadow-sky-500"></div>
+        <div className="bg-blue-500 shadow-blue-500"></div>
+        <div className="bg-indigo-500 shadow-indigo-500"></div>
+        <div className="bg-violet-500 shadow-violet-500"></div>
+        <div className="bg-purple-500 shadow-purple-500"></div>
+        <div className="bg-fuchsia-500 shadow-fuchsia-500"></div>
+        <div className="bg-pink-500 shadow-pink-500"></div>
+        <div className="bg-rose-500 shadow-rose-500"></div>
+        <div className="bg-stone-500 shadow-stone-500"></div>
       </div>
     </>
   )
