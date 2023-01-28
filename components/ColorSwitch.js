@@ -63,7 +63,7 @@ const ColorSwitch = (props) => {
   return (
     <>
       {colors.map((color) => {
-        return <ThemeButton value={color} setColor={setColor} />
+        return <ThemeButton key={color} value={color} setColor={setColor} />
       })}
       <div className="hidden">
         <div className="bg-red-50 shadow-red-500/50"></div>
