@@ -40,19 +40,6 @@ function useStickyState(defaultValue, key) {
   ]
 }
 
-const ThemeButton = ({ value, setColor }) => {
-  return (
-    <>
-      <div
-        className={`h-8 w-8 cursor-pointer rounded-full bg-${value}-500`}
-        onClick={() => {
-          setColor(value)
-        }}
-      ></div>
-    </>
-  )
-}
-
 const ColorSwitch = (props) => {
   const value = Math.floor(Math.random() * 16)
   const [color, setColor] = useStickyState(colors[value], 'theme-color')
@@ -62,10 +49,6 @@ const ColorSwitch = (props) => {
 
   return (
     <>
-      {colors.map((color) => {
-        return <ThemeButton key={color} value={color} setColor={setColor} />
-      })}
-
       <Popover className={`relative`}>
         {({ open }) => (
           <>
@@ -103,7 +86,22 @@ const ColorSwitch = (props) => {
                 >
                   <div className="overflow-hidden rounded-lg px-6 py-6 shadow-lg ring-1 ring-black ring-opacity-5">
                     <div>
-                      <RadioGroup value={color} onChange={setColor}>
+                      <div className="mb-4 flex flex-wrap justify-center gap-x-3 gap-y-1">
+                        {colors.map((color) => {
+                          return (
+                            <div
+                              key={color}
+                              className={`my-1 h-12 w-12 cursor-pointer rounded-lg font-semibold capitalize focus:outline-none bg-${color}-500`}
+                              onClick={() => {
+                                setColor(color)
+                              }}
+                            >
+                              <div></div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                      {/* <RadioGroup value={color} onChange={setColor}>
                         <RadioGroup.Label className="sr-only text-primary-500">
                           Theme color
                         </RadioGroup.Label>
@@ -138,7 +136,7 @@ const ColorSwitch = (props) => {
                             )
                           })}
                         </div>
-                      </RadioGroup>
+                      </RadioGroup> */}
                     </div>
                   </div>
                 </Popover.Panel>
@@ -147,7 +145,6 @@ const ColorSwitch = (props) => {
           </>
         )}
       </Popover>
-
       <div className="hidden">
         <div className="bg-red-50 shadow-red-500/50"></div>
         <div className="bg-orange-50 shadow-orange-500/50"></div>
