@@ -40,17 +40,57 @@ function useStickyState(defaultValue, key) {
   ]
 }
 
+function useScrollDirection() {
+  const [scrollDirection, setScrollDirection] = useState(null)
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+
+    const updateScrollDirection = () => {
+      const scrollY = window.scrollY
+      const direction = scrollY > lastScrollY ? 'down' : 'up'
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)
+      ) {
+        setScrollDirection(direction)
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0
+    }
+    window.addEventListener('scroll', updateScrollDirection)
+    return () => {
+      window.removeEventListener('scroll', updateScrollDirection)
+    }
+  }, [scrollDirection])
+
+  return scrollDirection
+}
+
 const ColorSwitch = (props) => {
   const value = Math.floor(Math.random() * 16)
   const [color, setColor] = useStickyState(colors[value], 'theme-color')
   const [current, setcurrent] = useState(color)
+
+  const [show, setShow] = useState(false)
+  const scrollDirection = useScrollDirection()
+
+  useEffect(() => {
+    const handleWindowScroll = () => {
+      if (window.scrollY > 25) setShow(true)
+      else setShow(false)
+    }
+
+    window.addEventListener('scroll', handleWindowScroll)
+    return () => window.removeEventListener('scroll', handleWindowScroll)
+  }, [])
+
   useEffect(() => {
     props.getColor(color)
   }, [setColor])
 
   return (
     <>
-      <Popover className={`relative`}>
+      <Popover className={`relative ${scrollDirection === 'down' ? '-top-80' : 'top-[-58px]'}`}>
         {({ open }) => (
           <>
             <Popover.Button
@@ -83,7 +123,9 @@ const ColorSwitch = (props) => {
             >
               <div className="fixed right-0 z-[15]">
                 <Popover.Panel
-                  className={`relative mx-5 mt-3 max-w-md transform rounded-lg bg-white/[0.50] backdrop-blur-md backdrop-filter transition-all duration-300 dark:bg-gray-900/[0.50]`}
+                  className={`relative mx-5 mt-3 max-w-md transform rounded-lg bg-white/[0.50] backdrop-blur-md backdrop-filter transition-all duration-300 dark:bg-gray-900/[0.50] ${
+                    scrollDirection === 'down' ? '-top-80' : 'top-[110px]'
+                  }`}
                 >
                   <div className="overflow-hidden rounded-lg px-6 py-6 shadow-lg ring-1 ring-black ring-opacity-5">
                     <div>
