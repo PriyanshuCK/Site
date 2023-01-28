@@ -5,20 +5,20 @@ const colors = [
   'orange',
   'amber',
   'yellow',
-  // 'lime',
-  // 'green',
-  // 'emerald',
-  // 'teal',
-  // 'cyan',
-  // 'sky',
-  // 'blue',
-  // 'indigo',
-  // 'violet',
-  // 'purple',
-  // 'fuchsia',
-  // 'pink',
-  // 'rose',
-  // 'stone',
+  'lime',
+  'green',
+  'emerald',
+  'teal',
+  'cyan',
+  'sky',
+  'blue',
+  'indigo',
+  'violet',
+  'purple',
+  'fuchsia',
+  'pink',
+  'rose',
+  'stone',
 ]
 
 function useStickyState(defaultValue, key) {
@@ -66,9 +66,11 @@ function useScrollDirection() {
   return scrollDirection
 }
 
-const ColorSwitch = (props) => {
-  const value = Math.floor(Math.random() * 3)
+const ColorSwitch = () => {
+  const value = Math.floor(Math.random() * 16)
   const [color, setColor] = useStickyState(colors[value], 'theme-color')
+  const [isShowing1, setIsShowing] = useState(false)
+
   const [show, setShow] = useState(false)
 
   const scrollDirection = useScrollDirection()
@@ -82,13 +84,19 @@ const ColorSwitch = (props) => {
     window.addEventListener('scroll', handleWindowScroll)
     return () => window.removeEventListener('scroll', handleWindowScroll)
   }, [])
-  props.getColor(color)
+  // props.getColor(color)
   return (
     <>
-      <Popover className={`relative ${scrollDirection === 'down' ? '-top-80' : 'top-[-58px]'}`}>
+      <Popover
+        className={`relative theme-${color} ${
+          scrollDirection === 'down' ? '-top-80' : 'top-[-58px]'
+        }`}
+      >
         <Popover.Button
           className={`
                 fixed right-[40px] z-[15] mx-4 mt-[76px] text-primary-400 focus:outline-none dark:text-primary-300 sm:right-[70px] md:right-[5px]`}
+          onMouseEnter={() => setIsShowing(true)}
+          onMouseLeave={() => setIsShowing(true)}
         >
           <span>
             <svg
@@ -113,13 +121,16 @@ const ColorSwitch = (props) => {
           leave="transition ease-in duration-150"
           leaveFrom="opacity-100 translate-y-0"
           leaveTo="opacity-0 translate-y-1"
+          show={isShowing1}
+          onMouseEnter={() => setIsShowing(true)}
+          onMouseLeave={() => setIsShowing(true)}
         >
-          <div className="fixed right-0 z-[15]">
-            <Popover.Panel
-              className={`relative mx-5 mt-3 max-w-md transform rounded-lg bg-white/[0.50] backdrop-blur-md backdrop-filter transition-all duration-300 dark:bg-gray-900/[0.50] ${
-                scrollDirection === 'down' ? '-top-80' : 'top-[110px]'
-              }`}
-            >
+          <div
+            className={`fixed right-0 z-[15] ${
+              scrollDirection === 'down' ? '-top-80' : 'top-[64px]'
+            }`}
+          >
+            <Popover.Panel className="relative mx-5 max-w-md transform rounded-lg bg-white/[0.50] backdrop-blur-md backdrop-filter transition-all duration-300 dark:bg-gray-900/[0.50]">
               <div className="overflow-hidden rounded-lg px-6 py-6 shadow-lg ring-1 ring-black ring-opacity-5">
                 <div>
                   <RadioGroup value={color} onChange={setColor}>
@@ -166,27 +177,28 @@ const ColorSwitch = (props) => {
                       <div className="bg-stone-500"></div>
                     </div>
                     <div className="flex flex-wrap justify-center gap-x-3 gap-y-6">
-                      {colors.map((color) => {
+                      {colors.map((colour) => {
                         return (
                           <>
                             <RadioGroup.Option
-                              key={color}
-                              value={color}
+                              key={colour}
+                              value={colour}
                               className="my-1 cursor-pointer rounded-full font-semibold capitalize focus:outline-none"
                             >
                               {({ checked }) => (
                                 <span
+                                  key={colour}
                                   className={`${
                                     checked
                                       ? 'rounded-lg bg-primary-50 p-3 ring-1 ring-primary-500 ring-offset-2 ring-offset-white dark:bg-gray-700 dark:ring-offset-gray-800'
-                                      : `rounded-lg p-3 bg-${color}-50 dark:bg-gray-700`
+                                      : `rounded-lg p-3 bg-${colour}-50 dark:bg-gray-700`
                                   }`}
                                 >
                                   <span
                                     className={`${
                                       checked
                                         ? 'scale-105 rounded-full bg-primary-500 px-3 py-[2px] shadow-lg shadow-primary-500 dark:bg-primary-300'
-                                        : `rounded-full px-3 py-[2px] bg-${color}-500 dark:bg-${color}-300 shadow-lg shadow-${color}-500/50`
+                                        : `rounded-full px-3 py-[2px] bg-${colour}-500 dark:bg-${colour}-300 shadow-lg shadow-${colour}-500/50`
                                     }`}
                                   ></span>
                                 </span>
