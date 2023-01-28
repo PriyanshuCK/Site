@@ -43,6 +43,7 @@ function useStickyState(defaultValue, key) {
 const ColorSwitch = (props) => {
   const value = Math.floor(Math.random() * 16)
   const [color, setColor] = useStickyState(colors[value], 'theme-color')
+  const [current, setcurrent] = useState(color)
   useEffect(() => {
     props.getColor(color)
   }, [setColor])
@@ -86,57 +87,32 @@ const ColorSwitch = (props) => {
                 >
                   <div className="overflow-hidden rounded-lg px-6 py-6 shadow-lg ring-1 ring-black ring-opacity-5">
                     <div>
-                      <div className="mb-4 flex flex-wrap justify-center gap-x-3 gap-y-1">
+                      <div className="flex flex-wrap justify-center gap-x-3 gap-y-1">
                         {colors.map((color) => {
                           return (
                             <div
                               key={color}
-                              className={`my-1 h-12 w-12 cursor-pointer rounded-lg font-semibold capitalize focus:outline-none bg-${color}-500`}
+                              className={`my-1 flex h-12 w-12 scale-90 cursor-pointer items-center justify-center rounded-lg font-semibold capitalize focus:outline-none dark:bg-gray-700 bg-${color}-50 ${
+                                current === color
+                                  ? 'ring-1 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-800'
+                                  : ''
+                              }`}
                               onClick={() => {
                                 setColor(color)
+                                setcurrent(color)
                               }}
                             >
-                              <div></div>
+                              <div
+                                className={`bg-${color}-500 h-6 w-6  dark:bg-${color}-300 rounded-full shadow-lg ${
+                                  current === color
+                                    ? 'shadow-primary-500'
+                                    : `shadow-${color}-500/50`
+                                }`}
+                              ></div>
                             </div>
                           )
                         })}
                       </div>
-                      {/* <RadioGroup value={color} onChange={setColor}>
-                        <RadioGroup.Label className="sr-only text-primary-500">
-                          Theme color
-                        </RadioGroup.Label>
-                        <div className="flex flex-wrap justify-center gap-x-3 gap-y-6">
-                          {colors.map((color) => {
-                            return (
-                              <>
-                                <RadioGroup.Option
-                                  key={color}
-                                  value={color}
-                                  className="my-1 cursor-pointer rounded-full font-semibold capitalize focus:outline-none"
-                                >
-                                  {({ checked }) => (
-                                    <span
-                                      className={`${
-                                        checked
-                                          ? 'rounded-lg bg-primary-50 p-3 ring-1 ring-primary-500 ring-offset-2 ring-offset-white dark:bg-gray-700 dark:ring-offset-gray-800'
-                                          : `rounded-lg p-3 bg-${color}-50 dark:bg-gray-700`
-                                      }`}
-                                    >
-                                      <span
-                                        className={`${
-                                          checked
-                                            ? 'scale-105 rounded-full bg-primary-500 px-3 py-[2px] shadow-lg shadow-primary-500 dark:bg-primary-300'
-                                            : `rounded-full px-3 py-[2px] bg-${color}-500 dark:bg-${color}-300 shadow-lg shadow-${color}-500/50`
-                                        }`}
-                                      ></span>
-                                    </span>
-                                  )}
-                                </RadioGroup.Option>
-                              </>
-                            )
-                          })}
-                        </div>
-                      </RadioGroup> */}
                     </div>
                   </div>
                 </Popover.Panel>
