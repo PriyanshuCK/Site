@@ -5,11 +5,11 @@ import ColorSwitch from './ColorSwitch'
 import { useState, useCallback } from 'react'
 
 const LayoutWrapper = ({ children }) => {
-  // const [color, setColor] = useState('emerald')
-  const color = 'emerald'
-  // const getColor = useCallback((newColor) => {
-  //   setColor(newColor)
-  // }, [])
+  const [color, setColor] = useState('emerald')
+
+  const getColor = useCallback((newColor) => {
+    setColor(newColor)
+  }, [])
   return (
     <>
       <div
@@ -18,7 +18,7 @@ const LayoutWrapper = ({ children }) => {
         } selection:bg-primary-200 selection:text-primary-900`}
       >
         <Header />
-        <ColorSwitch />
+        <ColorSwitch getColor={getColor} />
 
         <SectionContainer>
           <div className="flex flex-col justify-between">

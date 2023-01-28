@@ -66,7 +66,7 @@ function useScrollDirection() {
   return scrollDirection
 }
 
-const ColorSwitch = () => {
+const ColorSwitch = (props) => {
   const value = Math.floor(Math.random() * 16)
   const [color, setColor] = useStickyState(colors[value], 'theme-color')
   const [isShowing1, setIsShowing] = useState(false)
@@ -84,14 +84,13 @@ const ColorSwitch = () => {
     window.addEventListener('scroll', handleWindowScroll)
     return () => window.removeEventListener('scroll', handleWindowScroll)
   }, [])
-  // props.getColor(color)
+  useEffect(() => {
+    props.getColor(color)
+  }, [setColor])
+
   return (
     <>
-      <Popover
-        className={`relative theme-${color} ${
-          scrollDirection === 'down' ? '-top-80' : 'top-[-58px]'
-        }`}
-      >
+      <Popover className={`relative ${scrollDirection === 'down' ? '-top-80' : 'top-[-58px]'}`}>
         <Popover.Button
           className={`
                 fixed right-[40px] z-[15] mx-4 mt-[76px] text-primary-400 focus:outline-none dark:text-primary-300 sm:right-[70px] md:right-[5px]`}
