@@ -25,7 +25,7 @@ const ThemeSwitch = () => {
       type="button"
       onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
-      <div className="flex h-10 w-20 scale-[0.7] transform cursor-pointer items-center rounded-full bg-primary-400 shadow-lg shadow-primary-400 dark:bg-gray-500 dark:shadow-gray-600">
+      <div className="flex h-10 w-20 scale-[0.7] transform cursor-pointer items-center rounded-full bg-primary-400 shadow-lg shadow-primary-400 transition-all duration-300 dark:bg-gray-500 dark:shadow-gray-600">
         <svg
           width="24"
           height="24"
