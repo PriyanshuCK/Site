@@ -12,13 +12,13 @@ export default function Home({ posts, articles, blog, journal, notes }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <CommandPalette posts={posts} />
       <div
-        class="mx-auto mb-6 rounded-lg bg-primary-50 px-4 py-3 text-primary-900 shadow-sm dark:bg-gray-800 dark:text-gray-400 sm:mb-12 md:w-5/6"
+        className="mx-auto mb-6 rounded-lg bg-primary-50 px-4 py-3 text-primary-900 shadow-sm dark:bg-gray-800 dark:text-gray-400 sm:mb-12 md:w-5/6"
         role="alert"
       >
-        <div class="flex">
-          <div class="py-1">
+        <div className="flex">
+          <div className="py-1">
             <svg
-              class="mr-4 h-6 w-6 fill-current text-primary-500"
+              className="mr-4 h-6 w-6 fill-current text-primary-500"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
             >
@@ -26,8 +26,8 @@ export default function Home({ posts, articles, blog, journal, notes }) {
             </svg>
           </div>
           <div>
-            <p class="font-bold dark:text-gray-300">Development under progress</p>
-            <p class="text-sm">
+            <p className="font-bold dark:text-gray-300">Development under progress</p>
+            <p className="text-sm">
               This website is currently in the process of undergoing development and may contain
               certain UI errors or discrepancies. I'm truly appreciative of your understanding and
               patience as I strive to address any issues that may arise and to implement additional
