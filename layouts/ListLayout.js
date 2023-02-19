@@ -17,7 +17,7 @@ export default function ListLayout({ posts, title, typeDescription }) {
   return (
     <>
       <div>
-        <div className={'py-0 md:pt-6 md:pb-8'}>
+        <div className={'pb-8 md:pt-6'}>
           <h1 className="text-center text-4xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
@@ -33,7 +33,7 @@ export default function ListLayout({ posts, title, typeDescription }) {
                 setSearchQuery(event.target.value)
               }}
               placeholder={`Search ${title}`}
-              className="w-full rounded-full border-none bg-white px-4 py-3 text-gray-900 caret-primary-500 shadow-md focus:outline-none dark:bg-gray-800 dark:text-gray-100"
+              className="w-full rounded-full border-none bg-white px-4 py-3 text-gray-900 caret-primary-500 shadow-md focus:outline-none focus:ring-transparent dark:bg-gray-800 dark:text-gray-100"
             />
           </div>
         </div>

@@ -23,10 +23,6 @@ export default function About({ posts }) {
         </header>
         <div className="flex flex-col items-center py-10">
           <p className="text-center">
-            I love sharing my knowledge and insights with others, and that is what inspired me to
-            start this newsletter and the website.
-          </p>
-          <p className="text-center">
             Subscribe to my newsletter where I share my learnings and valuable insights from the
             content I consume.
           </p>

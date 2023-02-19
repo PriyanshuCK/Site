@@ -31,7 +31,7 @@ const ScrollTopAndComment = () => {
           aria-label="Scroll To Comment"
           type="button"
           onClick={handleScrollToComment}
-          className="rounded-full bg-primary-50 p-2 text-primary-500 shadow-lg shadow-primary-300 transition-all duration-300 dark:bg-gray-700 dark:text-primary-400 dark:shadow-gray-600 md:hover:scale-110 dark:md:hover:bg-gray-600"
+          className="inline-flex scale-[0.8] items-center justify-center rounded-full border border-primary-400 bg-white p-2 text-primary-400 shadow-md shadow-primary-200 transition-all duration-300 hover:bg-primary-400 hover:text-white focus:outline-none dark:border-primary-300 dark:bg-gray-800 dark:text-primary-300 dark:shadow-gray-800 dark:hover:border-gray-500 dark:hover:bg-gray-500 dark:hover:text-primary-400"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,20 +53,20 @@ const ScrollTopAndComment = () => {
         aria-label="Scroll To Top"
         type="button"
         onClick={handleScrollTop}
-        className="rounded-full bg-primary-50 p-2 text-primary-500 shadow-lg shadow-primary-300 transition-all duration-300 dark:bg-gray-700 dark:text-primary-400 dark:shadow-gray-600 md:hover:scale-110 dark:md:hover:bg-gray-600"
+        className="inline-flex scale-[0.8] items-center justify-center rounded-full border border-primary-400 bg-white p-2 text-primary-400 shadow-md shadow-primary-200 transition-all duration-300 hover:bg-primary-400 hover:text-white focus:outline-none dark:border-primary-300 dark:bg-gray-800 dark:text-primary-300 dark:shadow-gray-800 dark:hover:border-gray-500 dark:hover:bg-gray-500 dark:hover:text-primary-400"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
+          strokeWidth={1.5}
           stroke="currentColor"
-          strokeWidth={2}
+          className="h-6 w-6"
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a9 9 0 110 18 9 9 0 010-18z"
+            d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
           />
         </svg>
       </button>

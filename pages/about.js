@@ -19,7 +19,17 @@ export default function About({ posts }) {
             </div>
           </div>
         </header>
-        <div className="flex flex-col items-center py-10"></div>
+        <div className="flex flex-col items-center py-10">
+          {/* Namaste! I'm Priyanshu Sharma.
+          <br />I am a self-proclaimed lifelong learner who loves reading, designing, and
+          programming. I am always on the lookout for new opportunities to learn and grow. I love
+          sharing my knowledge and insights with others, and that is what inspired me to start this
+          website.I believe that we all have something valuable to contribute and I created this
+          website as a platform to share my learnings, happenings, beliefs, and thoughts with the
+          world. I am excited to share my journey with you and hope that you will join me on this
+          adventure.Thank you for stopping by, and I look forward to connecting with you through my
+          writing. */}
+        </div>
       </div>
     </>
   )

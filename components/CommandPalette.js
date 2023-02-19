@@ -77,7 +77,7 @@ export default function CommandPalette({ posts }) {
         aria-label="Search"
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-lg border-2 border-primary-300 p-2 text-base transition-all duration-300 hover:border-primary-500 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(76px)] lg:left-[calc(264px)] xl:left-[calc(50%-110px)]  ${
+        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-full border-2 border-primary-300 px-4 py-2 text-base transition-all duration-300 hover:border-primary-500 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(76px)] lg:left-[calc(264px)] xl:left-[calc(50%-116px)]  ${
           scrollDirection === 'down' ? '-top-24' : 'top-[8px]'
         }`}
       >

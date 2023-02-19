@@ -90,14 +90,18 @@ const ColorSwitch = (props) => {
 
   return (
     <>
-      <Popover className={`relative ${scrollDirection === 'down' ? '-top-80' : 'top-[-58px]'}`}>
+      <Popover
+        className={`relative transition-all duration-300 ${
+          scrollDirection === 'down' ? '-top-80' : 'top-[-58px]'
+        }`}
+      >
         {({ open }) => (
           <>
             <Popover.Button
               className={`
-                fixed right-[40px] z-[15] mx-4 mt-[68px] text-primary-400 focus:outline-none dark:text-primary-300 sm:right-[70px] md:right-[5px]`}
+                fixed right-[40px] z-[15] mx-4 mt-[67px] focus:outline-none sm:right-[60px] md:right-[16px]`}
             >
-              <span className="inline-flex items-center justify-center rounded-md p-2 hover:bg-primary-100 focus:outline-none dark:hover:bg-gray-800">
+              <span className="inline-flex scale-[0.8] items-center justify-center rounded-full border border-primary-400 p-2 text-primary-400 transition-all duration-300 hover:bg-primary-400 hover:text-white focus:outline-none dark:border-primary-300 dark:text-primary-300 dark:hover:border-gray-500 dark:hover:bg-gray-500 dark:hover:text-primary-400">
                 <span className="sr-only">Open Color Switcher</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

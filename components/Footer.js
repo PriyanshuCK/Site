@@ -48,7 +48,7 @@ export default function Footer() {
                   Priyanshu Sharma
                 </span>
               </Link>
-              <Link href="/contact" className="flex items-center">
+              <Link href="/" className="flex cursor-not-allowed items-center">
                 <span className="inline self-center whitespace-nowrap text-sm text-gray-500 hover:underline dark:text-gray-400">
                   Contact
                 </span>
@@ -112,12 +112,12 @@ export default function Footer() {
                 </h2>
                 <ul className="text-gray-600 dark:text-gray-400">
                   <li key="about" className="mb-3">
-                    <Link href="/about" className="hover:underline">
+                    <Link href="/" className="cursor-not-allowed hover:underline">
                       About
                     </Link>
                   </li>
                   <li key="now">
-                    <Link href="/now" className="hover:underline">
+                    <Link href="/" className="cursor-not-allowed hover:underline">
                       Now
                     </Link>
                   </li>
