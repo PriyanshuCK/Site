@@ -18,11 +18,7 @@ export default function Heading1({ rich_text, color, toggle, childrenBlock, id }
           </details>
         </div>
       ) : (
-        <h1
-          className={`${
-            color.length < 8 ? `text-${color}Notion` : `bg-${color.split('_', 1)}Notion`
-          }`}
-        >
+        <h1>
           <Richtext text={rich_text} id={id} color={color} />
         </h1>
       )}

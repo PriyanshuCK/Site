@@ -18,7 +18,7 @@ const colors = [
   'fuchsia',
   'pink',
   'rose',
-  'stone',
+  'slate',
 ]
 
 function useStickyState(defaultValue, key) {
@@ -148,6 +148,11 @@ const ColorSwitch = (props) => {
                                 setColor(color)
                                 setcurrent(color)
                               }}
+                              onFocus={() => {
+                                setColor(color)
+                                setcurrent(color)
+                              }}
+                              tabIndex="0"
                             >
                               <div
                                 className={`bg-${color}-500 h-6 w-6  dark:bg-${color}-300 rounded-full shadow-lg ${
@@ -186,7 +191,7 @@ const ColorSwitch = (props) => {
         <div className="bg-fuchsia-50 shadow-fuchsia-500/50 ring-fuchsia-500"></div>
         <div className="bg-pink-50 shadow-pink-500/50 ring-pink-500"></div>
         <div className="bg-rose-50 shadow-rose-500/50 ring-rose-500"></div>
-        <div className="bg-stone-50 shadow-stone-500/50 ring-stone-500"></div>
+        <div className="bg-slate-50 shadow-slate-500/50 ring-slate-500"></div>
 
         <div className="bg-red-500 shadow-red-500"></div>
         <div className="bg-orange-500 shadow-orange-500"></div>
@@ -205,7 +210,7 @@ const ColorSwitch = (props) => {
         <div className="bg-fuchsia-500 shadow-fuchsia-500"></div>
         <div className="bg-pink-500 shadow-pink-500"></div>
         <div className="bg-rose-500 shadow-rose-500"></div>
-        <div className="bg-stone-500 shadow-stone-500"></div>
+        <div className="bg-slate-500 shadow-slate-500"></div>
       </div>
     </>
   )

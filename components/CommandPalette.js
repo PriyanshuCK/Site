@@ -77,9 +77,10 @@ export default function CommandPalette({ posts }) {
         aria-label="Search"
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-full border-2 border-primary-300 px-4 py-2 text-base transition-all duration-300 hover:border-primary-500 dark:border-gray-700 dark:hover:border-gray-600 md:left-[calc(76px)] lg:left-[calc(264px)] xl:left-[calc(50%-116px)]  ${
-          scrollDirection === 'down' ? '-top-24' : 'top-[8px]'
-        }`}
+        className={`fixed left-[calc(50%-70px)] z-10 scale-90 rounded-full border border-primary-400 px-4 py-2 text-base transition-all duration-300 hover:shadow-md hover:shadow-primary-100
+         dark:border-gray-700 dark:hover:border-gray-600 dark:hover:shadow-gray-800 md:left-[calc(76px)] lg:left-[calc(264px)] xl:left-[calc(50%-116px)]  ${
+           scrollDirection === 'down' ? '-top-24' : 'top-[8px]'
+         }`}
       >
         <SearchIcon className="mr-2 inline h-5 w-5 text-gray-500 dark:text-gray-400" />
         <span className="mr-2 text-sm text-gray-500 dark:text-gray-400">Quick Search</span>

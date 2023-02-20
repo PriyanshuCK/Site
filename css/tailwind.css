@@ -258,17 +258,17 @@
   --primary-900: theme('colors.rose.900');
 }
 
-.theme-stone {
-  --primary-50: theme('colors.stone.50');
-  --primary-100: theme('colors.stone.100');
-  --primary-200: theme('colors.stone.200');
-  --primary-300: theme('colors.stone.300');
-  --primary-400: theme('colors.stone.400');
-  --primary-500: theme('colors.stone.500');
-  --primary-600: theme('colors.stone.600');
-  --primary-700: theme('colors.stone.700');
-  --primary-800: theme('colors.stone.800');
-  --primary-900: theme('colors.stone.900');
+.theme-slate {
+  --primary-50: theme('colors.slate.50');
+  --primary-100: theme('colors.slate.100');
+  --primary-200: theme('colors.slate.200');
+  --primary-300: theme('colors.slate.300');
+  --primary-400: theme('colors.slate.400');
+  --primary-500: theme('colors.slate.500');
+  --primary-600: theme('colors.slate.600');
+  --primary-700: theme('colors.slate.700');
+  --primary-800: theme('colors.slate.800');
+  --primary-900: theme('colors.slate.900');
 }
 
 input:-webkit-autofill,
